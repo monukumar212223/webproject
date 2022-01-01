@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
+    "sass":"node-sass -w assets/scss/ -o assets/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,6 +18,15 @@
     "ejs": "^2.7.4",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
-    "mongoose": "^5.13.13"
+    "express-session": "^1.17.2",
+    "middleware": "^1.0.0",
+    "mongoose": "^5.13.13",
+    "node": "^17.3.0",
+    "node-sass": "^7.0.1",
+    "node-sass-middleware": "^0.11.0",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "sass": "^1.45.1",
+    "sass-middleware": "^0.0.3"
   }
 }
