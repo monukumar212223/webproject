@@ -17,3 +17,19 @@ module.exports.create=function(req,res){
      }
   });
 }
+module.exports.destroy=function(req,res){
+  Comment.findById(req.params.id,function(err,comment){
+    if(comment.user==req.user.id){
+
+      let postId=comment.post;
+      comment.remove();
+      Post.findByIdAndUpdate(postId,{$pusll:{
+      comments: req.params.id 
+      }},function(req,res){
+        return res.redirect('back');
+      })
+    }
+    else
+    return res.redirect('back');
+  });
+}
