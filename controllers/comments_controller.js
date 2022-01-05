@@ -23,7 +23,7 @@ module.exports.destroy=function(req,res){
 
       let postId=comment.post;
       comment.remove();
-      Post.findByIdAndUpdate(postId,{$pusll:{
+      Post.findByIdAndUpdate(postId,{$pull:{
       comments: req.params.id 
       }},function(req,res){
         return res.redirect('back');

@@ -11,5 +11,5 @@ db.once('open', function(){
     console.log('Connected to Database :: MongoDB');
 });
 
-
+mongoose.set('useFindAndModify', false);
 module.exports = db;
