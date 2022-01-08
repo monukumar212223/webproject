@@ -15,13 +15,13 @@ let transporters=nodemailer.createTransport({
     }
 });
 
-let rendertTemplate=(data,realtivePath)=>{
+let renderTemplates=(data,realtivePath)=>{
     let mailHTML;
     ejs.renderFile(
-        path.join(__dirname,'../views/mailers',realtivePath),
+        path.join(__dirname,'../views/mailer',realtivePath),
         data,
         function(err,template){
-            if(err){console.log('error in rendering template'); return ;}
+            if(err){console.log('error in rendering template',err); return ;}
             mailHTML=template;
         }
         )   
@@ -30,5 +30,5 @@ let rendertTemplate=(data,realtivePath)=>{
 
 module.exports={
     transporter:transporters,
-    rendertTemplate:rendertTemplate
+    renderTemplate:renderTemplates
 }
