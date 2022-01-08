@@ -40,8 +40,6 @@ module.exports.destroy= async function(req,res){
         },message:" deleted"
       });
     }
-
-
       req.flash('success','post deleted');
       return res.redirect('back');
        }
