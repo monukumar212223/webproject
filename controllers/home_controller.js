@@ -3,6 +3,8 @@ const { exec } = require('child_process');
 const { populate } = require('../models/post');
 const Post=require('../models/post');
 const User=require('../models/user');
+const Friend=require('../models/friendship');
+
 module.exports.home = async function(req, res){
    // console.log(req.cookies);
     // res.cookie('user_id', 25);
@@ -26,11 +28,13 @@ let posts= await Post.find({})
      }
  });
  //exec(function(err,posts){
-   let users=await User.find({}); 
+   let users=await User.find({});
+   let friend=await Friend.find({}); 
    return res.render('home',{
     title:"Codeial |Home",
     posts:posts,
-    all_users:users
+    all_users:users,
+    friends:friend
 });
   }
   catch(err){

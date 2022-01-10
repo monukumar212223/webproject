@@ -1,0 +1,53 @@
+#user-chat-box{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border: 1px dashed green;
+    height: 330px;
+    width: 300px;
+    background-color: lightgreen;
+    padding: 5px;
+    #chat-messages-lists{
+        list-style: none;
+        padding: 10px;
+        height: 70%;
+        background-color: aliceblue;
+        overflow: auto;
+        .other-message{
+            text-align: left;
+            padding:5px;
+            span{
+                display: inline-block;
+                padding: 15px;
+                background-color:lightyellow;
+            }
+        }
+        .self-message{
+            text-align: right;
+            padding: right;
+            span{
+                display: inline-block;
+                padding: 15px;
+                background-color: aqua;
+            }
+        }
+    }
+    #chat-message-input-container{
+      height: 24%; 
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      #chat-message-input{
+          height: 50%;
+          width: 70%;
+      }
+      #send-message{
+          height: 50%;
+          width: 30%;
+          font-size:25px;
+          color: white;
+          border: none;
+          background-color: chocolate;
+        }      
+    }
+}
