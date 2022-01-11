@@ -21,6 +21,7 @@ const chatSockets=require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('chat server is on port 5000');
 const path=require('path');
+
 app.use(sassMiddleware({
     src:'./assets/scss',
     dest:'./assets/css',
@@ -49,7 +50,7 @@ app.set('views', './views');
 
 app.use(session({
   name:'codeial',
-  secret:'blah-somethoing',
+  secret:env.session_cookie_key,
   saveUninitialized:false,
   resave:false,
    cookie:{
