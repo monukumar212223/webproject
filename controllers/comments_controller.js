@@ -21,11 +21,11 @@ module.exports.create = async function(req, res){
 
             comment = await comment.populate('user', 'name email').execPopulate();
             //commentsMailer.newComment(comment);
-          let job= queue.create('emails',comment).save(function(err){
-                if(err){console.log('error',err);return ;}
+          //let job= queue.create('emails',comment).save(function(err){
+            //    if(err){console.log('error',err);return ;}
 
-                console.log('job enqueue',job.id);
-            });
+             //   console.log('job enqueue',job.id);
+            //});
             if (req.xhr){
                 // Similar for comments to fetch the user's id!
     

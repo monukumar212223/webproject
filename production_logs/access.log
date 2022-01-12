@@ -349,3 +349,4 @@
 ::1 - - [Wed, 12 Jan 2022 07:46:27 GMT] "GET / HTTP/1.1" 304 - "http://localhost:8002/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
 ::1 - - [Wed, 12 Jan 2022 08:03:11 GMT] "GET /users/sign-out HTTP/1.1" 302 46 "http://localhost:8002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
 ::1 - - [Wed, 12 Jan 2022 08:03:14 GMT] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
+::1 - - [Wed, 12 Jan 2022 17:09:25 GMT] "GET / HTTP/1.1" 200 39766 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
