@@ -4,7 +4,8 @@
   "description": "My all social media web application",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
     "sass": "node-sass -w assets/scss/ -o assets/css/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod_start": "NODE_ENV=production nodemon index.js"
