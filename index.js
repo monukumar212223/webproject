@@ -1,8 +1,11 @@
 const express = require('express');
 const env=require('./config/environment');
+const logger=require('morgan');
+
 const cookieParser = require('cookie-parser');
 const app = express();
-const port = 8002;
+require('./config/view-helpers')(app);
+///const port = 8002;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const session=require('express-session');
@@ -21,14 +24,13 @@ const chatSockets=require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('chat server is on port 5000');
 const path=require('path');
-
-app.use(sassMiddleware({
+/*app.use(sassMiddleware({
     src:'./assets/scss',
     dest:'./assets/css',
     debug:true,
     outputStyle:'extended',
     prefix:'/css'
-}));
+}));*/
 
 app.use(express.urlencoded());
 
@@ -36,6 +38,9 @@ app.use(cookieParser());
 
 app.use(express.static(env.asset_path));
 app.use('/uploads',express.static(__dirname+'/uploads'));
+
+app.use(logger(env.morgan.mode,env.morgan.options));
+
 app.use(expressLayouts);
 // extract style and scripts from sub pages into the layout
 app.set('layout extractStyles', true);
@@ -66,10 +71,9 @@ app.use(passport.setAuthenticatedUser);
 app.use(flash());
 app.use(customMware.setFlash);
 app.use('/', require('./routes'));
-app.listen(port, function(err){
+app.listen(process.env.port, function(err){
     if (err){
         console.log(`Error in running the server: ${err}`);
     }
-
-    console.log(`Server is running on port: ${port}`);
+    console.log(`Server is running on port: ${process.env.port}`);
 });
