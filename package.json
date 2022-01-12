@@ -44,6 +44,7 @@
     "passport-google-oauth": "^2.0.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "redis": "^4.0.1",
     "rotating-file-stream": "^3.0.2",
     "run-sequence": "^2.2.1",
     "sass": "^1.45.1",
