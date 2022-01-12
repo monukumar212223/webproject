@@ -36,7 +36,6 @@ const development={
 }
 const production={
     name:"production",
-    name:"development",
     asset_path:'./assets',
     session_cookie_key:'blahsomething',
     db:'codeial_production',
